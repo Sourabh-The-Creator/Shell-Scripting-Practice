@@ -30,7 +30,18 @@ echo "Repy var : $REPLY"
 
 
 # To store Args passed from command line use $1 $2 and so on.....  
-$1 $2 $3
+
 echo "$1 and $2 and $3"
 
+# if we want to store args as array then bash stores it in @, and we can retrive it by $@
 
+args=("$@")
+
+#to print all args 
+echo "$@"
+
+#echo "$args"
+echo "${args[1]} ${args[2]}" 
+
+#to print the number of args passed wecan use $#
+echo "$#"
