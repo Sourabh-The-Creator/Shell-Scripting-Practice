@@ -38,7 +38,38 @@ else
 	echo "Invalid"
 fi
 
+# File test operators
+# -e is used to keep the cusror at the end of line
 
+echo -e "Enter the name of file : "
+read file
+# -e checks if file exists or not
+# -f : if file exists and if it is regular file or not
+# -d : if dir exists or not
+# -s : whether file is empty or not
+# -c : whether it is character file
+# -b : whether it is  block file
+# -r : to check if file has read permission
+# -w : to check if file has write permission
+# -x : to check if file has execute permission
+
+if [ -e $file ]
+then 
+	if [ -f $file ]
+	then 
+		if [ -w $file ]
+		then 
+			echo "Enter text, press ctrl+d to exit ";
+			cat >> $file
+		else
+			echo "File dont have write permission";
+		fi
+	else
+		echo "File is not regular file";
+	fi
+else
+	echo "file not exists";
+fi
 
 # case statment similar to switch statement, syntax as below
 
@@ -51,7 +82,6 @@ fi
 #		default statement;;
 #esac
 
-
 read -p "Enter car type : " car
 case $car in
 	"van" )
@@ -63,3 +93,9 @@ case $car in
 	* )
 		echo "Not available";;
 esac
+
+# Logical operators
+# if [ condition ] && [ condition2 ] or it can be written as if [ condition1 -a condition2 ] -a flag: and operator or [[ condition1 && condition2 ]]
+# if [ condition1 ] || [ condition2 ] or it can be written as if [ condition1 -o  condtition2 ] -o : or operator or [[ condtion1 || condition2 ]]
+
+
