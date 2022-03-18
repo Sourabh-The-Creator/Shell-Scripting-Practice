@@ -26,7 +26,7 @@ echo "Names are ${names[0]}, ${names[1]}"
 
 # When read is written with no variable input goes into default variable $REPLY
 read 
-echo "Repy var : $REPLY"
+echo "Reply var : $REPLY"
 
 
 # To store Args passed from command line use $1 $2 and so on.....  
